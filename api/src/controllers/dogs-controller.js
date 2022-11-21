@@ -26,7 +26,7 @@ const getDbDogs = async () => {
     //console.log(dbDogs);
     return dbDogs;
   } catch (error) {
-    console.log("hubo un error en get dbDogs");
+    console.log("Hubo un error en getDbDogs");
   }
 };
 
@@ -43,7 +43,7 @@ const getDogs = async () => {
   }));
 
   let dbDogs = await getDbDogs();
-  console.log(dbDogs);
+  //console.log(dbDogs);
   dbDogs = dbDogs.map((dog) => ({
     id: dog.dataValues.id,
     name: dog.dataValues.name,
@@ -73,7 +73,7 @@ const getDogsToRouter = async (req, res) => {
 
     res.status(200).json(dogs);
   } catch (error) {
-    console.log("error en getdogstorouter");
+    // console.log("error en getdogstorouter");
     res.status(404).json({ error: error.message });
   }
 };
@@ -83,13 +83,18 @@ const getDogToRouter = async (req, res) => {
   let dogs = await getDogs();
   try {
     //if( Number(id) = ) {}
-    dogFounded = dogs.find((dog) => dog.id === Number(id));
+    let dogFounded = dogs.find((dog) => dog.id == id);
+
     /*  if (!id) {
       throw new Error("the id does not exist");
     } */
-    res.status(200).json(dogFounded);
+    if (dogFounded) {
+      res.status(200).json(dogFounded);
+    } else {
+      throw new Error("Dog Not Found");
+    }
   } catch (error) {
-    console.log("error en getdogtorouter");
+    //console.log("error en getdogtorouter");
     res.status(404).json({ error: error.message });
   }
 };
@@ -117,7 +122,7 @@ const createDogToRouter = async (req, res) => {
     newDog.addTemperament(dogTemperament);
     res.status(200).send("Dog created succesfully");
   } catch (error) {
-    console.log("error en createdogstorouter");
+    //  console.log("error en createdogstorouter");
     res.status(404).json({ error: error.message });
   }
 };

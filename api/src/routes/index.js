@@ -22,4 +22,6 @@ router.get("/dogs/:id", getDogToRouter);
 
 router.post("/dogs", createDogToRouter);
 
+router.get("/temperaments", getTemperaments);
+
 module.exports = router;
