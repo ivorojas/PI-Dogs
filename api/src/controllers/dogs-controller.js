@@ -112,17 +112,21 @@ const createDogToRouter = async (req, res) => {
       image,
       created,
     });
+    temperament = temperament.replaceAll(", ", ",").split(",");
+    for await (let temp of temperament) {
+      let createdTemperament = await Temperament.findOne({
+        where: { name: temp },
+      });
 
-    const dogTemperament = await Temperament.findAll({
-      where: {
-        name: temperament,
-      },
-    });
+      if (!createdTemperament)
+        createdTemperament = await Temperament.create({
+          name: temp,
+        });
 
-    newDog.addTemperament(dogTemperament);
+      await newDog.addTemperament(createdTemperament);
+    }
     res.status(200).send("Dog created succesfully");
   } catch (error) {
-    //  console.log("error en createdogstorouter");
     res.status(404).json({ error: error.message });
   }
 };

@@ -1,0 +1,80 @@
+.landing {
+  display: flex;
+  justify-content: space-around;
+  color: #a57a4f;
+  font-family: 'Agency FB', arial;
+  text-align: left;
+  font-size: 180%;
+  align-items: center;
+  height: 25rem;
+  margin-top: 70px;
+  margin-left: 80px;
+  margin-bottom: 30px;
+}
+
+.dogs-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  flex-wrap: wrap
+}
+
+.card-container {
+  margin: 20px;
+}
+/*
+.dog-landing {
+  position: relative;
+  left: 150px ;
+}*/
+
+#explora-razas {
+  font-family: 'Agency FB', arial;
+  color: gray;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+.hr {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+
+  width: 50%;
+}
+
+#footer {
+  color: gray;
+  padding-bottom: 2rem;
+
+  font-size: 1rem;
+}
+
+#container-paginado {
+  padding: 2rem;
+}
+
+#filtro-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 9rem;
+}
+
+#filtro-button {
+  padding: 0.5rem;
+  margin: 0px;
+  font-family: 'Agency FB', arial;
+  font-size: 2rem;
+  background-color: white;
+  border: white 0px;
+  color: #a57a4f;
+
+}
+
+#filtro-button:hover {
+  cursor: pointer;
+}

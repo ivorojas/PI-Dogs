@@ -1,0 +1,32 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 300px;
+  align-items: center ;
+ font-family: 'Agency FB', arial;
+ font-size: 1.4rem;
+ /*border: 5px solid gray;*/
+ background-color: rgb(243, 243, 243);
+ padding-bottom: 2rem;
+}
+
+
+.temp-peso {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #a57a4f;
+  width: 280px;
+}
+.card-container h3{
+  color: rgb(78, 78, 78);
+  font-size: 1.8rem;
+}
+
+/*
+img {
+  position: relative;
+  top: -10;
+}
+*/
