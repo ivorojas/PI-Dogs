@@ -35,11 +35,14 @@ const getDogs = async () => {
   apiDogs = apiDogs.map((dog) => ({
     id: dog.id,
     name: dog.name,
-    height: dog.height.metric,
-    weight: dog.weight.metric,
-    life_span_: dog.life_span,
+    height_min: dog.height.metric.split(" - ")[0],
+    height_max: dog.height.metric.split(" - ")[1],
+    weight_min: dog.weight.metric.split(" - ")[0],
+    weight_max: dog.weight.metric.split(" - ")[1],
+    life_span: dog.life_span,
     image: dog.image.url,
     temperament: dog.temperament,
+    created: false,
   }));
 
   let dbDogs = await getDbDogs();
@@ -47,11 +50,14 @@ const getDogs = async () => {
   dbDogs = dbDogs.map((dog) => ({
     id: dog.dataValues.id,
     name: dog.dataValues.name,
-    height: dog.dataValues.height,
-    weight: dog.dataValues.weight,
-    life_span_: dog.dataValues.life_span,
-    image: dog.dataValues.image.url,
+    height_min: dog.dataValues.height_min,
+    height_max: dog.dataValues.height_max,
+    weight_min: dog.dataValues.weight_min,
+    weight_max: dog.dataValues.weight_max,
+    life_span: dog.dataValues.life_span,
+    image: dog.dataValues.image,
     temperament: dog.dataValues.temperaments.map((el) => el.name).join(", "),
+    created: dog.dataValues.created,
   }));
 
   let dogs = dbDogs.concat(apiDogs);
@@ -100,19 +106,33 @@ const getDogToRouter = async (req, res) => {
 };
 
 const createDogToRouter = async (req, res) => {
-  let { name, height, weight, life_span, image, temperament, created } =
-    req.body;
+  let {
+    name,
+    height_min,
+    height_max,
+    weight_min,
+    weight_max,
+    life_span,
+    image,
+    temperament,
+    created,
+  } = req.body;
   try {
-    if (!name || !height || !weight) throw new Error("Bad request.");
+    if (!name || !height_min || !height_max || !weight_min || !weight_max)
+      throw new Error("Bad request.");
     let newDog = await Dog.create({
       name,
-      height,
-      weight,
+      height_min,
+      height_max,
+      weight_min,
+      weight_max,
       life_span,
       image,
       created,
     });
-    temperament = temperament.replaceAll(", ", ",").split(",");
+    temperament = temperament.map((t) => {
+      return t[0].toUpperCase() + t.slice(1);
+    });
     for await (let temp of temperament) {
       let createdTemperament = await Temperament.findOne({
         where: { name: temp },

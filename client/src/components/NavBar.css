@@ -42,7 +42,8 @@ font-weight: 500;
 
 .button-navbar:hover {
   cursor: pointer;
-  border-color: rgb(201, 179, 155);
+  border-color: #b69675;
+  color:  #b69675;;
 }
 
 #input-nav {
@@ -63,4 +64,17 @@ font-weight: 500;
 #input-nav::placeholder {
 
   color: gray;
+}
+
+
+#button-lupa {
+  position: relative;
+  top: 4px;
+  right: 30px;
+  border: 0px;
+  background-color: white;
+}
+
+#button-lupa:hover {
+  cursor: pointer;
 }

@@ -23,3 +23,10 @@
  cursor: pointer;
  background-color: rgb(201, 179, 155);
 }
+
+#paginado {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 1000px;
+}

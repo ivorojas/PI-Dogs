@@ -32,7 +32,7 @@
 
 #explora-razas {
   font-family: 'Agency FB', arial;
-  color: gray;
+  color: #808080;
   padding-bottom: 20px;
   font-size: 30px;
 }
@@ -47,20 +47,19 @@ hr {
   width: 50%;
 }
 
-#footer {
-  color: gray;
-  padding-bottom: 2rem;
 
-  font-size: 1rem;
-}
 
 #container-paginado {
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
 }
 
 #filtro-button-container {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   margin-right: 9rem;
 }
 
@@ -77,4 +76,40 @@ hr {
 
 #filtro-button:hover {
   cursor: pointer;
+  color:  #b69675;
+}
+
+.list-dropdown {
+  
+  background-color: red;
+}
+
+.inner-list-dropdown {
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+
+#footer-home {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  color: gray;
+  padding-bottom: 2rem;
+
+  font-size: 1rem;
+}
+
+.button-footer {
+  border: 0px;
+  padding: 10px;
+  background-color: white;
+}
+
+.button-footer:hover {
+cursor: pointer;
 }

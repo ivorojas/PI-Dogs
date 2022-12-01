@@ -1,7 +1,6 @@
 .card-container {
   display: flex;
   flex-direction: column;
-  background-color: white;
   width: 300px;
   align-items: center ;
  font-family: 'Agency FB', arial;
@@ -11,6 +10,11 @@
  padding-bottom: 2rem;
 }
 
+.card-container:hover {
+
+ background-color: rgb(233, 233, 233);
+
+}
 
 .temp-peso {
   display: flex;
@@ -24,6 +28,13 @@
   font-size: 1.8rem;
 }
 
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
 /*
 img {
   position: relative;
