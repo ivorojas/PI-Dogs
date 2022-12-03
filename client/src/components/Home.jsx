@@ -31,6 +31,12 @@ export default function Home() {
 	const indexFirstDog = indexLastDog - dogsPerPage
 	const currentDogs = allDogs.slice(indexFirstDog, indexLastDog)
 
+	const [loading, setLoading] = useState(true)
+  const changeLoading = () => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 1100)
+  }
 
 	
 	const [isActive, setIsActive] = useState(false)
@@ -62,6 +68,21 @@ export default function Home() {
 	}
 
 	let aux = 0;
+
+
+	if (loading) {
+    changeLoading()
+    return (
+			<div className='loading-container'>
+				<div className='loading'>
+					<svg viewBox="25 25 50 50">
+						<circle r="20" cy="50" cx="50"></circle>
+					</svg>
+				</div>
+			</div>
+    ) 
+  }
+
   return (
     <div>
 			<header>

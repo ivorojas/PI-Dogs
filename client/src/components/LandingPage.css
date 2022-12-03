@@ -1,0 +1,27 @@
+#landing_container {
+  background-image: url("../img/BACKGROUND2.jpg");
+  background-size: cover;
+  height: 760px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+#parte_izq {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+#button_landing {
+  margin-top: 5rem;
+  padding: 1rem;
+}
+
+#parte_der {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

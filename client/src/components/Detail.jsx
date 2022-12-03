@@ -11,7 +11,7 @@ export default function Detail(props) {
   const changeLoading = () => {
     setTimeout(() => {
       setLoading(false)
-    }, 1500)
+    }, 1100)
   }
 
   const detail = useSelector(state=> state.detail)
@@ -44,7 +44,7 @@ export default function Detail(props) {
   
 
       <h3>{detail.name}</h3>
-      <img src={detail.image} alt='imagen perro' height="250px"  id='imagen-detail'/>
+      <img src={detail.image} alt='imagen perro' height="230px"  id='imagen-detail'/>
       <div className='clasificaciones' >
         <h3>Temperamentos:</h3>
         <p>{detail.temperament?detail.temperament: "Ningun Temperamento en especial"}</p>

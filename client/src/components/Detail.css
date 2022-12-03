@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   font-family: 'Agency FB', arial;
-  font-size: 2rem;
+  font-size: 1.8rem;
 
 }
  
@@ -17,15 +17,15 @@
   width: 600px;
   align-items: center ;
  font-family: 'Agency FB', arial;
- font-size: 1.7rem;
+ font-size: 1.6rem;
  background-color: rgb(243, 243, 243);
- padding-bottom: 2rem;
+ padding-bottom: 1.8rem;
  color: #a57a4f;
 
 }
 
 .detail-card-container h3{
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
 #button-detail-atras {
@@ -35,7 +35,7 @@
   background-color: white;
   color: #a57a4f;
   font-size: 1.2rem;
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 #button-detail-atras:hover{
@@ -47,6 +47,8 @@ cursor: pointer;
   width: 500px;
 }
 .loading {
+  display: flex;
+  flex-direction: column;
   height: 800px;
   display: flex;
   justify-content: center;
