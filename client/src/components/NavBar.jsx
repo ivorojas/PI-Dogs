@@ -31,16 +31,21 @@ export default function NavBar() {
         </NavLink>
         <div id='logo'>
         <NavLink to='/' >
+          <button onClick="window.location.reload()" id='button_logo' >
           <img src={logo}  alt='logo' height='80px'/>
+          </button>
+       
         </NavLink>
         </div>
         <div className='input-container'>
-        <input type='text' placeholder='busca una raza' id='input-nav' onChange={(e) => handleInputChange(e)} />
-        <button type='submit' onClick={(e) => handleSubmit(e)} id="button-lupa" >
-          <span className="material-symbols-rounded">
-            search
-          </span>
-        </button> 
+        <form action="#">
+          <input type='text' placeholder='busca una raza' id='input-nav' onChange={(e) => handleInputChange(e)} />
+          <button type='submit' onClick={(e) => handleSubmit(e)} id="button-lupa" >
+            <span className="material-symbols-rounded">
+              search
+            </span>
+          </button>
+        </form> 
         </div>
       
 			</div>

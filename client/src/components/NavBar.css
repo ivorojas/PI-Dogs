@@ -72,9 +72,18 @@ font-weight: 500;
   top: 4px;
   right: 30px;
   border: 0px;
-  background-color: white;
+  background-color: transparent;
 }
 
 #button-lupa:hover {
+  cursor: pointer;
+}
+
+#button_logo {
+  border:  0px;
+  background-color: transparent;
+}
+
+#button_logo:hover {
   cursor: pointer;
 }
